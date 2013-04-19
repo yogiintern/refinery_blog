@@ -6,15 +6,37 @@
     css = [(css || 'menu clearfix')].flatten.join(' ')
     hide_children = Refinery::Core.menu_hide_children if hide_children.nil?
 -%>
-<nav id='<%= dom_id %>' class='<%= css %>'>
-  <ul>
-    <%= render :partial => '/refinery/menu_branch', :collection => roots,
+
+<% end -%>
+
+<div class="topbar">
+  <div class="frame">
+  <div class="header">
+            <ul class="rightnav">
+                <li><label>App available:</label>
+                  <a href="#"><%= image_tag("icon_apple.png", :alt=>"") %></a> &nbsp; 
+                  <a href="#"><%= image_tag("icon_android.png", :alt=>"") %></a></li>
+                <li>
+                    <a href="#"><%= image_tag("icon_p.png", :alt=>"") %></a>
+                    <a href="#"><%= image_tag("icon_twitter.png", :alt=>"") %></a>
+                    <a href="#"><%= image_tag("icon_fb.png", :alt=>"") %></a>
+                </li>
+                <li class="btns">
+                  <a href="http://122.248.218.113/signup">
+                    <%= image_tag("btn_signup.png", :alt=>"") %></a>
+                <a href="http://122.248.218.113/users/sign_in"><%= image_tag("btn_login.png", :alt=>"") %></a>
+                </li>
+            </ul>
+            <ul class="leftnav">
+              <%= render :partial => '/refinery/menu_branch', :collection => roots,
                :locals => {
                  :hide_children => hide_children,
                  :sibling_count => (roots.length - 1),
                  :menu_levels => local_assigns[:menu_levels],
                  :apply_css => true #if you don't care about class='first' class='last' or class='selected' set apply_css to false for speed.
                } -%>
-  </ul>
-</nav>
-<% end -%>
+          </ul>
+       </div>
+
+  </div>
+</div>

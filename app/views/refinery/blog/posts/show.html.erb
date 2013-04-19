@@ -13,7 +13,6 @@
 <%= render :partial => "/refinery/content_page", :locals => { :remove_automatic_sections => true }  %>
 
 <% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
-<hr/>
 <% content_for :javascripts do %>
   <%# enable AJAX'd post nav at your own risk until html5 history API implemented. %>
   <%#= javascript_include_tag('refinery/blog/frontend') %>

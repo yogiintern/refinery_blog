@@ -1,7 +1,16 @@
-<h1 id='logo'>
-  <%= link_to Refinery::Core.site_name, refinery.root_path %>
-</h1>
+<!-- <h1 id='logo'> -->
+  <%#= link_to Refinery::Core.site_name, refinery.root_path %>
+<!-- </h1> -->
 <%= render(:partial => "/refinery/menu", :locals => {
              :dom_id => 'menu',
              :css => 'menu'
            }) %>
+<div class="logobar">
+	<div class="frame">
+		<span class="logo">
+			<a href="http://122.248.218.113/">
+				<%= image_tag("logo2.png", :alt=>"") %>
+			</a>
+		</span>
+	</div>
+</div>

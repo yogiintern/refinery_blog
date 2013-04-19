@@ -1,4 +1,14 @@
-<p>
-  <%= t('.copyright', :year => Time.now.year,
-                      :site_name => Refinery::Core.site_name) %>
-</p>
+<div class="footer">
+  <%= yield :page_javascript %>
+  <div class="frame">
+     <ul class="fotnav">
+     		<li><a href="http://122.248.218.113/home/privacy">Privacy Policy</a></li> 
+        <li>| </li>
+        <li><a href="http://122.248.218.113/home/faq">FAQ </a></li>
+        <li>| </li>
+        <li><a href="http://122.248.218.113/home/terms">Disclaimer </a></li>
+      </ul>
+      <p>Copyright 2013 by GolfHero.com. All rights reserved. </p>
+  </div>
+
+</div>

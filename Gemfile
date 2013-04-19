@@ -25,6 +25,7 @@ end
 
 gem 'jquery-rails', '~> 2.0.0'
 gem 'refinerycms-blog'
+gem 'pry'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
