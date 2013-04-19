@@ -1,3 +1,4 @@
+<div class="blogstuff">
 <nav id="next_prev_article">
   <% if @post.next.present? -%>
     <%= link_to (truncate(@post.next.title) + " &#187;").html_safe, 
@@ -15,3 +16,4 @@
                 :class => 'prev' %>
   <% end -%>
 </nav><!-- /next_prev_article -->
+</div>

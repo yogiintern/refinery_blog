@@ -1,0 +1,17 @@
+<div class="blogpanel">
+  <div class="blogstuff">
+    <h1 style="color:#2e9a2e">Category: <%= @category.title %></h1>
+      <% if @posts.any? %>
+          <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+          <%= will_paginate @posts %>
+      <% else %>
+        <p>
+          <%= t('.no_posts') %>
+        </p>
+      <% end %>
+        <%#= render :partial => '/refinery/blog/shared/body_content_right' %>
+
+    <%= render :partial => "/refinery/content_page" %>
+    <% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<aside id="comments">
+<div class="blogstuff" style="width:600px;">
   <h2><%= t('title', :scope => 'refinery.blog.posts.show.comments') %></h2>
   <% if (comments = @post.comments.approved).any? %>
     <%= render :partial => "comment", :collection => comments %>
@@ -21,20 +21,18 @@
                  :object => f.object,
                  :include_object_name => true
                } %>
-    <div class='field'>
-      <%= f.label :name %><br/>
+    <div class="row">
+      <label>Name: </label>
       <%= f.text_field :name %>
     </div>
-    <div class='field'>
-      <%= f.label :email %><br/>
-      <%= f.email_field :email %>
+    <div class="row" style="padding-bottom:5px;">
+      <label>Email: </label>
+      <%= f.email_field :email %><br/>
     </div>
-    <div class='field message_field'>
-      <%= f.label :message %><br/>
+    <div class='row'>
+      <label>Message: </label>
       <%= f.text_area :message, :rows => 4 %>
     </div>
-    <div class='field form-actions'>
-      <%= f.submit t('submit', :scope => 'refinery.blog.posts.show') %>
-    </div>
+      <%= image_submit_tag("btn_send.png",:scope => 'refinery.blog.posts.show')%>
   <% end %>
-</aside>
+</div>

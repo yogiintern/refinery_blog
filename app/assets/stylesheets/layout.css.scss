@@ -331,6 +331,12 @@ body{font-family:Helvetica, Arial, sans-serif; font-size:13px; color:#525252; ba
 .footer ul.fotnav li a:hover{text-decoration:underline;}
 .footer p{color:#7f7f7f;}
 
+#next_prev_article a{color:#2e9a2e; text-decoration:none;}
 
+.blogstuff input[type=text]{width:284px; float:left; padding:9px 8px; border:none; color:#929292; font-size:13px; background:url(inputfield_bg.jpg) 0 0 no-repeat;}
+.blogstuff input[type=email]{width:284px; float:left; padding:9px 8px; border:none; color:#929292; font-size:13px; background:url(inputfield_bg.jpg) 0 0 no-repeat;}
+.blogstuff input[type=submit]{width:299px; float:left; background:url(btn_send.png) 0 0 no-repeat; border:none; height:32px; margin:15px 0 40px; cursor:pointer;}
+.blog_comment_message{border: 1px solid; margin: 10px; border-color: #DFF5E1; padding: 10px;}
 
-
+.archive a{color:#2e9a2e; text-decoration:none;}
+.blogstuff a{color:#2e9a2e; text-decoration:none;}
