@@ -1,5 +1,6 @@
 <div class="blog_rightpanel">
 	  <%= yield(:body_content_right_prepend) %>
+    <%= render :partial => "/refinery/blog/shared/search_form" %>
 	  <%= render :partial => "/refinery/blog/shared/rss_feed" %>
 	  <%= render :partial => "/refinery/blog/shared/categories" %>
 	  <%= render :partial => "/refinery/blog/shared/posts" %>

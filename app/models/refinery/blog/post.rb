@@ -106,6 +106,7 @@ module Refinery
         def search(search_string="")
           Post.includes(:categories,:tags).live.where("refinery_blog_posts.title like (?) or refinery_blog_posts.body like (?) or refinery_blog_categories.title like (?) or tags.name like (?)","%#{search_string}%","%#{search_string}%","%#{search_string}%","%#{search_string}%")
         end
+      end
 
       module ShareThis
         def self.enabled?

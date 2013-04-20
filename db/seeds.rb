@@ -12,5 +12,3 @@ Refinery::Pages::Engine.load_seed
 # Added by Refinery CMS Blog engine
 Refinery::Blog::Engine.load_seed
 
-# Added by Refinery CMS Search engine
-Refinery::Search::Engine.load_seed
