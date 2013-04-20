@@ -21,9 +21,9 @@ module Refinery
 
       def search
         @posts = Post.search(params[:search]).page(params[:page])
-        respond_with (@posts) do |format|
-          format.html
-        end
+
+          render "refinery/blog/posts/index"
+
       end
 
 

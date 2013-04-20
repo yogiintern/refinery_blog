@@ -86,13 +86,11 @@ body{font-family:Helvetica, Arial, sans-serif; font-size:13px; color:#525252; ba
 .content .result li .block ul.summery li .time a+a{margin-left:26px;}
 .content .result li .block ul.summery li span{float:left; width:140px; margin-bottom:5px;}
 
-.content .paging{float:right; list-style:none;}
-.content .paging li{float:left;}
-.content .paging li+li{margin-left:5px;}
-.content .paging li a{color:#2e9a2e; text-decoration:none; font-weight:bold; background:url(paging_bg.png) 0 0 no-repeat; text-align:center; padding-top:5px; width:26px; height:21px; float:left;}
-.content .paging li a:hover{background:none; color:#525252;}
-.content .paging li a.select{background:none; color:#525252;}
-.content .paging li a.prenext{background:none; width:auto;}
+
+ .pagination  a,.pagination .current,span.previous_page,span.next_page{margin-left:5px;color:#2e9a2e; text-decoration:none; font-weight:bold; background:url(paging_bg.png) 0 0 no-repeat; text-align:center; padding-top:5px; width:26px; height:21px; float:left;}
+.pagination a:hover{background:none; color:#525252;}
+.pagination a.select,.pagination .current{background:none; color:#525252;}
+.pagination a.previous_page,.pagination a.next_page,span.previous_page,span.next_page{background:none; width:auto;}
 
 .content ul.tabs{position:absolute; top:0; right:0; list-style:none;}
 .content ul.tabs li{float:left;}
@@ -275,7 +273,7 @@ body{font-family:Helvetica, Arial, sans-serif; font-size:13px; color:#525252; ba
 .window .popframe select{padding:1.7% 1.5% 1.7% 1%;}
 .window .popframe a{color:#2e9a2e; font-weight:bold;}
  /*==========================POPUP===============================*/
- 
+
  .loginpopup{width:238px; float:left; background:#f9f9f9; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; box-shadow: 0px 0px 5px #888888; padding:15px;}
 .loginpopup input[type=text]{background:url(input_bg3.png) 0 0 no-repeat; margin-bottom:10px; width:232px; height:34px; line-height:32px; color:#5f635d; border:none; padding:0 5px;}
 .loginpopup input[type=password]{background:url(input_bg3.png) 0 0 no-repeat; margin-bottom:10px; width:232px; height:34px; line-height:32px; color:#5f635d; border:none; padding:0 5px;}
@@ -306,7 +304,7 @@ body{font-family:Helvetica, Arial, sans-serif; font-size:13px; color:#525252; ba
 .blogpanel .blogstuff p.blogby{font-size:12px;}
 .blogpanel .blogstuff .blogimg{float:left; margin:20px 0;}
 .blogpanel .blogstuff .socialicon{width:100%; float:left; margin-top:30px;}
-.blogpanel .paging{float:left; border-top:1px solid #cecece; margin-top:20px; padding-top:20px; width:100%;}
+.blogpanel .pagination{float:left; border-top:1px solid #cecece; margin-top:20px; padding-top:20px; width:100%;}
 
 .blog_rightpanel{float:right; width:300px;}
 .blog_rightpanel .search{width:300px; float:left; background:url(searchfeild_bg.jpg) 0 0 no-repeat; height:32px; margin-bottom:50px;}

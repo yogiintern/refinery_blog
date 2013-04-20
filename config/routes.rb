@@ -70,14 +70,8 @@ end
 
 
 Refinery::Core::Engine.routes.prepend do
-  binding.pry
   namespace :blog do
    get 'search', :to => 'posts#search', :as => :post_search
   end
 end
-Refinery::Blog::Engine.routes.prepend do
-  binding.pry
-  namespace :blog do
-   get 'search', :to => 'posts#search', :as => :post_search
-  end
-end
+

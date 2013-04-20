@@ -2,7 +2,7 @@
   <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
   <% if @posts.any? %>
     <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
-    <%= will_paginate @posts %>
+    <%= will_paginate @posts, :previous_label=>"« Previous",:next_label=>"Next »"%>
   <% else %>
     <p><%= t('.no_blog_articles_yet') %></p>
   <% end %>
