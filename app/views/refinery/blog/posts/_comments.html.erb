@@ -1,38 +1,37 @@
-<div class="blogstuff" style="width:600px;">
+<div class="blogpanel">
+  <div class="blogstuff">
   <h2><%= t('title', :scope => 'refinery.blog.posts.show.comments') %></h2>
-  <% if (comments = @post.comments.approved).any? %>
-    <%= render :partial => "comment", :collection => comments %>
-  <% else %>
-    <p>
-      <%= t('none', :scope => 'refinery.blog.shared.comments') %>.
-    </p>
-  <% end %>
+    <% if (comments = @post.comments.approved).any? %>
+      <%= render :partial => "comment", :collection => comments %>
+    <% else %>
+      <p class="comment">
+        <%= t('none', :scope => 'refinery.blog.shared.comments') %>.
+      </p>
+    <% end %>
 
-  <% flash.each do |key, value| %>
-    <div id='flash' class="flash flash_<%= key %>">
-      <%= value %>
-    </div>
-  <% end %>
 
-  <h2><%= t('add', :scope => 'refinery.blog.posts.show.comments') %></h2>
-  <%= form_for [refinery, :blog, @comment] do |f| %>
-    <%= render :partial => "/refinery/admin/error_messages",
-               :locals => {
-                 :object => f.object,
-                 :include_object_name => true
-               } %>
-    <div class="row">
-      <label>Name: </label>
-      <%= f.text_field :name %>
+    <h3><%= t('add', :scope => 'refinery.blog.posts.show.comments') %></h3>
+    <div class="comment">
+      <%= form_for [refinery, :blog, @comment] do |f| %>
+        <%= render :partial => "/refinery/admin/error_messages",
+                   :locals => {
+                     :object => f.object,
+                     :include_object_name => true
+                   } %>
+        <div class="row">
+          <label>Name: </label>
+          <%= f.text_field :name %>
+        </div>
+        <div class="row" style="padding-bottom:5px;">
+          <label>Email: </label>
+          <%= f.email_field :email %><br/>
+        </div>
+        <div class='row'>
+          <label>Message: </label>
+          <%= f.text_area :message, :rows => 4 %>
+        </div>
+          <%= image_submit_tag("btn_send.png",:scope => 'refinery.blog.posts.show')%>
+      <% end %>
     </div>
-    <div class="row" style="padding-bottom:5px;">
-      <label>Email: </label>
-      <%= f.email_field :email %><br/>
-    </div>
-    <div class='row'>
-      <label>Message: </label>
-      <%= f.text_area :message, :rows => 4 %>
-    </div>
-      <%= image_submit_tag("btn_send.png",:scope => 'refinery.blog.posts.show')%>
-  <% end %>
+  </div>
 </div>
