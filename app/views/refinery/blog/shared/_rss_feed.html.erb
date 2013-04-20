@@ -1,2 +1,10 @@
-<h2>Subscription</h2>
-<%= link_to image_tag("subscribe_btn.png"), refinery.blog_rss_feed_path, :id => "rss_feed_subscribe"%>
+<div class="subscribe">
+	<h2>Subscription</h2>
+	<%= form_tag(refinery.blog_rss_feed_path,:method=>:get) do %>
+		<%= text_field_tag("subscribe[email]", nil, :placeholder=>"Your email address") %>
+		<%= image_submit_tag("subscribe_btn.png") %>
+	<%end%>
+	<!-- <input name="textfield" type="text" onblur="if(this.value=='') this.value='Your email address';" onfocus="if(this.value=='Your email address') this.value='';" value="Your email address"/> -->
+	<%#= link_to image_tag("subscribe_btn.png"), refinery.blog_rss_feed_path%>
+	<!-- <input name="" type="submit" value="" /> -->
+</div>

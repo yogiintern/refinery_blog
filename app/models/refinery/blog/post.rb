@@ -102,10 +102,10 @@ module Refinery
           currently = Refinery::Setting.find_or_set(:teasers_enabled, true, :scoping => 'blog')
           Refinery::Setting.set(:teasers_enabled, :value => !currently, :scoping => 'blog')
         end
+
         def search(search_string="")
           Post.includes(:categories,:tags).live.where("refinery_blog_posts.title like (?) or refinery_blog_posts.body like (?) or refinery_blog_categories.title like (?) or tags.name like (?)","%#{search_string}%","%#{search_string}%","%#{search_string}%","%#{search_string}%")
         end
-      end
 
       module ShareThis
         def self.enabled?

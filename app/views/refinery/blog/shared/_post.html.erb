@@ -4,7 +4,7 @@
         <h1><%= post.title %></h1>
         <p class="blogby">By&nbsp;<a href="#"><%= "#{post.author.username}" if post.author.present? %></a>
           <time datetime="<%=l post.published_at.to_date, :format => :long %>" class='posted_at'>
-            <%= t('created_at', :scope => 'refinery.blog.shared.posts', :when => l(post.published_at.to_date, :format => :short)) %>
+            <%= t('created_at', :scope => 'refinery.blog.shared.posts', :when => l(post.published_at.to_date, :format => :long)) %>
           </time> | 
           <% if Refinery::Blog::Post.comments_allowed? %>
             <% if post.comments.any? %>
@@ -26,30 +26,27 @@
               <%=raw tags.collect { |tag| link_to tag, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize) }.to_sentence %>
             </aside>
           <% end %> -->
-      <section class='clearfix'>
-        <% if blog_post_teaser_enabled? %>
-          <%= blog_post_teaser(post) %>
-        <% else %>
-          <%= post.body.html_safe %>
-        <% end %>
-      </section>
-      <footer>
+          <!-- <div class="blogimg"> --><%#= image_tag("blog_img1.jpg")%><!-- </div> -->
         <p>
-          <%= link_to t('read_more', :scope => 'refinery.blog.shared.posts',:class=>"reammore"), refinery.blog_post_path(post) if blog_post_teaser_enabled? %>
-          <div class="socialicon">
-            <!-- AddThis Button BEGIN -->
-            <div class="addthis_toolbox addthis_default_style ">
+          <% if blog_post_teaser_enabled? %>
+            <%= blog_post_teaser(post) %>
+          <% else %>
+            <%= post.body.html_safe %>
+          <% end %>
+        </p>
+        <%= link_to t('read_more', :scope => 'refinery.blog.shared.posts',:class=>"reammore"), refinery.blog_post_path(post) if blog_post_teaser_enabled? %>&nbsp;<%= image_tag("readmore_arrow.png") %>
+        <div class="socialicon">
+          <!-- AddThis Button BEGIN -->
+          <div class="addthis_toolbox addthis_default_style ">
             <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
             <a class="addthis_button_tweet"></a>
             <a class="addthis_button_pinterest_pinit"></a>
             <a class="addthis_counter addthis_pill_style"></a>
-            </div>
-            <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51307e54403cdd0f"></script>
-            <!-- AddThis Button END -->
           </div>
-        </p>
-      </footer>
+          <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+          <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51307e54403cdd0f"></script>
+          <!-- AddThis Button END -->
+        </div>
     </article>
   <% end %>
 </div>

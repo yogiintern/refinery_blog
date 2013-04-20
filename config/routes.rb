@@ -5,7 +5,9 @@ GolfBlog::Application.routes.draw do
   # If you would like to change where this extension is mounted, simply change the :at option to something different.
   #
   # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
+  root :to => 'refinery/blog/posts#index'
   mount Refinery::Core::Engine, :at => '/'
+  # root :to => 'blog#index'
 
   # match 'refinery/users/search' => 'refinery/users#search', :as => :search
   # The priority is based upon order of creation:

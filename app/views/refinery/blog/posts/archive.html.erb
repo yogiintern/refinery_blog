@@ -1,17 +1,17 @@
-<div class="archive">
-	<% content_for :title, "#{t('.blog_archive_for', :date => @archive_date.strftime('%B %Y'))}" %>
-
-	<% content_for :body_content_left do %>
-	  <h1><%= t('.blog_archive_for', :date => @archive_date.strftime('%B %Y')) %></h1>
-	  <% if @posts.any? %>
-	      <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
-	  <% else %>
-	    <p><%= t('.no_blog_articles_posted', :date => @archive_date.strftime('%B %Y')) %></p>
-	  <% end %>
-	<% end %>
-
-	<%= render :partial => '/refinery/blog/shared/body_content_right' %>
-
-	<%= render :partial => "/refinery/content_page" %>
-	<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
+<div class="blogpanel">
+	<div class="blogstuff">
+		<% content_for :title, "#{t('.blog_archive_for', :date => @archive_date.strftime('%B %Y'))}" %>
+		<h3 class="heading">Archive for&nbsp;<%= @archive_date.strftime('%B %Y')%></h3>
+		<%# content_for :body_content_left do %>
+		  <!-- <h1> --><%#= t('.blog_archive_for', :date => @archive_date.strftime('%B %Y')) %><!-- </h1> -->
+		  <% if @posts.any? %>
+		      <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+		  <% else %>
+		    <p><%= t('.no_blog_articles_posted', :date => @archive_date.strftime('%B %Y')) %></p>
+		  <% end %>
+		<%# end %>
+	</div>
 </div>
+	<%= render :partial => '/refinery/blog/shared/body_content_right' %>
+	<%#= render :partial => "/refinery/content_page" %>
+	<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>

@@ -1,12 +1,14 @@
 <div class="list">
 	<% if @posts.many? %>
 	  <h2>Latest Post</h2>
-	  <ul id="blog_posts">
+	  <ul>
 	    <% @posts.each do |blog_post| %>
-	      <li class='clearfix'>
+	      <li>
 	        <%= link_to blog_post.title, refinery.blog_post_path(blog_post) %>
 	        <br />
-	 				<span><%= blog_post.published_at.to_date %></span>
+	 				<span>
+	 					<%=l blog_post.published_at.to_date, :format => :long %>
+	 				</span>
 	      </li>
 	    <% end %>
 	  </ul>

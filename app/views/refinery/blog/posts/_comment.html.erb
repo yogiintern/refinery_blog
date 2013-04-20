@@ -1,9 +1,11 @@
 <article class='blog_comment_message' id='<%= "comment-#{comment.to_param}" %>'>
-  <footer class='blog_comment_author' style="background-color:#DFF5E1;">
+  <footer class='blog_comment_author'>
     <p>
       <%= t('by', :scope => 'refinery.blog.posts.comments', :who => comment.name) %>,
       <%= t('time_ago', :scope => 'refinery.blog.posts.comments', :time => time_ago_in_words(comment.created_at)) %>
     </p>
   </footer>
-  <%= simple_format auto_link(comment.message.to_s) %>
+  <p class="comment_block">
+  	<%= comment.message.to_s %>
+	</p>
 </article>
