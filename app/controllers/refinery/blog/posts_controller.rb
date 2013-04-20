@@ -20,7 +20,7 @@ module Refinery
       end
 
       def search
-        @posts = Post.search(params[:search])
+        @posts = Post.search(params[:search]).page(params[:page])
         respond_with (@posts) do |format|
           format.html
         end
