@@ -65,3 +65,10 @@ GolfBlog::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
+
+
+Refinery::Core::Engine.routes.prepend do
+  namespace :blog do
+   get 'search', :to => 'posts#search', :as => :post_search
+  end
+end
