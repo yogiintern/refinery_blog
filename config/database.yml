@@ -51,8 +51,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: refinery_database_production
+  database: refinery_database_development
   pool: 5
-  username: postgres
-  password: postgres
+  username: amardaxini
+  password: thakkar
   min_messages: warning
